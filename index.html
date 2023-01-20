@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RA CASINO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/odometer-theme-default.css" />
+    <script src="./assets//js/tailwind.js"></script>
+    <script src="./assets/js/jquery-3.1.0.js"></script>
+
+    <script src="./assets/js/odometer.js"></script>
+
+</head>
+
+<body class="bg-theme-4">
+    <!-- Top Navigation -->
+    <div class="header bg-theme-1 text-white">
+        <div class="container mx-auto grid grid-cols-6">
+            <div class="col-span-3"></div>
+            <!-- Header Button -->
+            <div class="col-span-3 flex justify-end items-center  py-5">
+                <input class="input-1" placeholder="아이디" type="text">
+                <input class="input-1" placeholder="비밀번호" type="password">
+                <button class="button-1 button-bg">로그인</button>
+                <button class="button-1 button-bg" onclick="OpenRegisterDialog()">회원가입</button>
+            </div>
+            <!-- Header Button -->
+        </div>
+    </div>
+    <!-- Top Navigation -->
+
+    <!-- Navigation And Brand -->
+    <div class="header bg-theme-2 text-white">
+        <div class="container mx-auto grid grid-cols-7 gap-2">
+            <div class="col-span-3 links">
+                <ul class="nav-menu">
+                    <li onclick="ToogleGameTab(1)">
+                        <img src="./assets/images/navigation/1.svg" alt="">
+                        <p data-back="라이브 카지노" data-front="라이브 카지노"></p>
+                    </li>
+                    <li onclick="ToogleGameTab(2)">
+                        <img src="./assets/images/navigation/2.svg" alt="">
+                        <p data-back="슬롯 게임" data-front="슬롯 게임"></p>
+                    </li>
+                    <li onclick="ToogleGameTab(3)">
+                        <img src="./assets/images/navigation/3.svg" alt="">
+                        <p data-back="스포츠 베팅" data-front="스포츠 베팅"></p>
+                    </li>
+                    <li onclick="ToogleGameTab(4)">
+                        <img src="./assets/images/navigation/4.svg" alt="">
+                        <p data-back="미니 게임" data-front="미니 게임"></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-span-1 relative">
+                <img class="brand" src="./assets/images/brand/logo-vertical.png" alt="">
+            </div>
+            <div class="col-span-3 links">
+                <ul class="nav-menu">
+                    <li onclick="OpenLoginDialog()">
+                        <img src="./assets/images/navigation/5.svg" alt="">
+                        <p data-back="입금" data-front="입금"></p>
+                    </li>
+                    <li onclick="OpenLoginDialog()">
+                        <img src="./assets/images/navigation/6.svg" alt="">
+                        <p data-back="출금" data-front="출금"></p>
+                    </li>
+                    <li onclick="OpenLoginDialog()">
+                        <img src="./assets/images/navigation/7.svg" alt="">
+                        <p data-back="머니이동" data-front="머니이동"></p>
+                    </li>
+                    <li onclick="OpenLoginDialog()">
+                        <img src="./assets/images/navigation/8.svg" alt="">
+                        <p data-back="쪽지함" data-front="쪽지함"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation And Brand -->
+
+    <!-- Banner -->
+    <div class="banner"></div>
+    <!-- Banner -->
+
+    <!-- Game Navigation -->
+    <div class="container mx-auto py-2">
+        <div class="game-nav bg-theme-1">
+            <div class="links live active" onclick="ToogleGameTab(1)">
+                <div class="game-nav_bg"></div>
+                <img src="./assets/images/nav-game/1.jpg" alt="">
+                <div class="title-container">
+                    <h3 class="link-text">라이브 카지노</h3>
+                    <button>게임 시작하기</button>
+                </div>
+            </div>
+            <div class="links slot" onclick="ToogleGameTab(2)">
+                <div class="game-nav_bg"></div>
+                <img src="./assets/images/nav-game/2.jpg" alt="">
+                <div class="title-container">
+                    <h3 class="link-text">라이브 카지노</h3>
+                    <button>게임 시작하기</button>
+                </div>
+            </div>
+            <div class="links sports" onclick="ToogleGameTab(3)">
+                <div class="game-nav_bg"></div>
+                <img src="./assets/images/nav-game/3.jpg" alt="">
+                <div class="title-container">
+                    <h3 class="link-text">라이브 카지노</h3>
+                    <button>게임 시작하기</button>
+                </div>
+            </div>
+            <div class="links arcade" onclick="ToogleGameTab(4)">
+                <div class="game-nav_bg"></div>
+                <img src="./assets/images/nav-game/4.jpg" alt="">
+                <div class="title-container">
+                    <h3 class="link-text">라이브 카지노</h3>
+                    <button>게임 시작하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Game Navigation -->
+
+    <!-- Live Game box -->
+    <div class="live-box game-container container mx-auto  ">
+        <div class=" grid grid-cols-6  gap-3 ">
+            <div class="game-button" style="background : url('./assets/images/live/1.jpg')">
+                <div class="game-button-title">에볼루션</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">에볼루션</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/2.jpg')">
+                <div class="game-button-title">마이크로게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">마이크로게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/3.jpg')">
+                <div class="game-button-title">아시아게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">아시아게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/4.jpg')">
+                <div class="game-button-title">플레이테크</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">플레이테크</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/5.jpg')">
+                <div class="game-button-title">프라그마틱플레이</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">프라그마틱플레이</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/6.jpg')">
+                <div class="game-button-title">게임플레이</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">게임플레이</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/7.jpg')">
+                <div class="game-button-title">섹시게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">섹시게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/8.jpg')">
+                <div class="game-button-title">올벳</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">올벳</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/9.jpg')">
+                <div class="game-button-title">비비아이엔</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">비비아이엔</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/10.jpg')">
+                <div class="game-button-title">비보게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">비보게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/11.jpg')">
+                <div class="game-button-title">비보알라딘</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">비보알라딘</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/12.jpg')">
+                <div class="game-button-title">WM게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">WM게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/13.jpg')">
+                <div class="game-button-title">빅게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">빅게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/14.jpg')">
+                <div class="game-button-title">오리엔탈게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">오리엔탈게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/live/15.jpg')">
+                <div class="game-button-title">프로비전</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">프로비전</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/button-coming-soon.jpg')">
+
+            </div>
+            <div class="game-button" style="background : url('./assets/images/button-coming-soon.jpg')">
+
+            </div>
+            <div class="game-button" style="background : url('./assets/images/button-coming-soon.jpg')">
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Live Game box -->
+
+    <!-- Slot Game Box -->
+    <div class="slot-box hidden game-container container mx-auto  ">
+        <div class="  grid grid-cols-6  gap-3 ">
+            <div class="game-button" style="background : url('./assets/images/slot/1.jpg')">
+                <div class="game-button-title">프라그마틱플레이</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">프라그마틱플레이</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/2.jpg')">
+                <div class="game-button-title">넷엔트</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">넷엔트</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/3.jpg')">
+                <div class="game-button-title">플레이앤고</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">플레이앤고</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/4.jpg')">
+                <div class="game-button-title">하바네로</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">하바네로</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/5.jpg')">
+                <div class="game-button-title">마이크로게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">마이크로게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/6.jpg')">
+                <div class="game-button-title">아시아게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">아시아게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/7.jpg')">
+                <div class="game-button-title">플레이테크</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">플레이테크</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/8.jpg')">
+                <div class="game-button-title">게임플레이</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">게임플레이</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/9.jpg')">
+                <div class="game-button-title">비비아이엔</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">비비아이엔</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/10.jpg')">
+                <div class="game-button-title">이그드라실</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">이그드라실</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/11.jpg')">
+                <div class="game-button-title">레드타이거</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">레드타이거</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/12.jpg')">
+                <div class="game-button-title">부운고</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">부운고</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/13.jpg')">
+                <div class="game-button-title">씨큐나인게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">씨큐나인게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/15.jpg')">
+                <div class="game-button-title">포켓게임스</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">포켓게임스</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/16.jpg')">
+                <div class="game-button-title">리얼타임게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">리얼타임게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/17.jpg')">
+                <div class="game-button-title">스카이윈드</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">스카이윈드</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/18.jpg')">
+                <div class="game-button-title">스페이드게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">스페이드게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/19.jpg')">
+                <div class="game-button-title">탑트렌드게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">탑트렌드게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/20.jpg')">
+                <div class="game-button-title">드림테크</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">드림테크</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/21.jpg')">
+                <div class="game-button-title">벳소프트</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">벳소프트</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/22.jpg')">
+                <div class="game-button-title">퀵스핀</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">퀵스핀</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/23.jpg')">
+                <div class="game-button-title">레드레이크</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">레드레이크</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/24.jpg')">
+                <div class="game-button-title">릴렉스게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">릴렉스게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/25.jpg')">
+                <div class="game-button-title">플레이손</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">플레이손</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/26.jpg')">
+                <div class="game-button-title">블루프린트</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">블루프린트</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/27.jpg')">
+                <div class="game-button-title">에보플레이</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">에보플레이</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/28.jpg')">
+                <div class="game-button-title">가마트론</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">가마트론</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/30.jpg')">
+                <div class="game-button-title">올웨이스핀</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">올웨이스핀</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/31.jpg')">
+                <div class="game-button-title">드래곤게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">드래곤게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/32.jpg')">
+                <div class="game-button-title">톰혼</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">톰혼</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/33.jpg')">
+                <div class="game-button-title">비비테크</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">비비테크</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/34.jpg')">
+                <div class="game-button-title">스피노미널</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">스피노미널</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/35.jpg')">
+                <div class="game-button-title">만칼라게이밍</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">만칼라게이밍</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/slot/36.jpg')">
+                <div class="game-button-title">아메바</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">아메바</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/button-coming-soon.jpg')">
+
+            </div>
+            <div class="game-button" style="background : url('./assets/images/button-coming-soon.jpg')">
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Slot Game Box -->
+    <div class="sports-box hidden game-container container mx-auto  ">
+        <div class="  grid grid-cols-3  gap-3">
+            <div class="game-button sports" style="background : url('./assets/images/sports/1.jpg')">
+                <div class="game-button-title">10BET</div>
+                <div class="overlay">
+                    <div>
+                        <button class="overlay-button mb-2" onclick="OpenLoginDialog()">스포츠입장</button>
+                        <button class="overlay-button" onclick="OpenLoginDialog()" onclick="OpenLoginDialog()">팝업
+                            플레이</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="game-button sports" style="background : url('./assets/images/sports/2.jpg')">
+                <div class="game-button-title">PINNACLE</div>
+                <div class="overlay">
+                    <div>
+                        <button class="overlay-button mb-2" onclick="OpenLoginDialog()">스포츠입장</button>
+                        <button class="overlay-button" onclick="OpenLoginDialog()">팝업 플레이</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-button sports" style="background : url('./assets/images/sports/3.jpg')">
+                <div class="game-button-title">SBO BET</div>
+                <div class="overlay">
+                    <div>
+                        <button class="overlay-button mb-2" onclick="OpenLoginDialog()">스포츠입장</button>
+                        <button class="overlay-button" onclick="OpenLoginDialog()">팝업 플레이</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-button sports" style="background : url('./assets/images/sports/4.jpg')">
+                <div class="game-button-title">IBC</div>
+                <div class="overlay">
+                    <div>
+                        <button class="overlay-button mb-2" onclick="OpenLoginDialog()">스포츠입장</button>
+                        <button class="overlay-button" onclick="OpenLoginDialog()">팝업 플레이</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-button sports" style="background : url('./assets/images/sports/5.jpg')">
+                <div class="game-button-title">BET CONSTRUCT</div>
+                <div class="overlay">
+                    <div>
+                        <button class="overlay-button mb-2" onclick="OpenLoginDialog()">스포츠입장</button>
+                        <button class="overlay-button" onclick="OpenLoginDialog()">팝업 플레이</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-button sports" style="background : url('./assets/images/sports/6.jpg')">
+                <div class="game-button-title">IGK BET</div>
+                <div class="overlay">
+                    <div>
+                        <button class="overlay-button mb-2" onclick="OpenLoginDialog()">스포츠입장</button>
+                        <button class="overlay-button" onclick="OpenLoginDialog()">팝업 플레이</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-button sports" style="background : url('./assets/images/sports/7.jpg')">
+                <div class="game-button-title">UG</div>
+                <div class="overlay">
+                    <div>
+                        <button class="overlay-button mb-2" onclick="OpenLoginDialog()">스포츠입장</button>
+                        <button class="overlay-button" onclick="OpenLoginDialog()">팝업 플레이</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-button sports" style="background : url('./assets/images/sports/8.jpg')">
+                <div class="game-button-title">SONG88</div>
+                <div class="overlay">
+                    <div>
+                        <button class="overlay-button mb-2" onclick="OpenLoginDialog()">스포츠입장</button>
+                        <button class="overlay-button" onclick="OpenLoginDialog()">팝업 플레이</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-button sports" style="background : url('./assets/images/sports-coming-soon.jpg')">
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Arcade Game Box -->
+    <div class="arcade-box hidden game-container container mx-auto ">
+
+        <div class="  grid grid-cols-6  gap-3 ">
+            <div class="game-button" style="background : url('./assets/images/arcade/1.jpg')">
+                <div class="game-button-title">부스타빗</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">부스타빗</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/2.jpg')">
+                <div class="game-button-title">ACG 키노사다리</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">ACG 키노사다리</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/3.jpg')">
+                <div class="game-button-title">스카이시티 야구</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">스카이시티 야구</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/4.jpg')">
+                <div class="game-button-title">스카이시티 농구</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">스카이시티 농구</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/5.jpg')">
+                <div class="game-button-title">스카이시티 크리켓</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">스카이시티 크리켓</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/6.jpg')">
+                <div class="game-button-title">스카이시티 주사위</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">스카이시티 주사위</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/7.jpg')">
+                <div class="game-button-title">스카이시티 축구</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">스카이시티 축구</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/8.jpg')">
+                <div class="game-button-title">게임플레이 사다리</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">게임플레이 사다리</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/9.jpg')">
+                <div class="game-button-title">게임플레이 가위바위보</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">게임플레이 가위바위보</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/10.jpg')">
+                <div class="game-button-title">게임플레이 R로터리</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">게임플레이 R로터리</button>
+                </div>
+            </div>
+            <div class="game-button" style="background : url('./assets/images/arcade/11.jpg')">
+                <div class="game-button-title">V2G 골든레이스</div>
+                <div class="overlay">
+                    <button class="overlay-button" onclick="OpenLoginDialog()">V2G 골든레이스</button>
+                </div>
+            </div>
+
+            <div class="game-button" style="background : url('./assets/images/button-coming-soon.jpg')">
+
+            </div>
+        </div>
+    </div>
+    <!-- Arcade Game Box -->
+
+    <!-- Jackpot Odometer -->
+    <div class="container jackpot-container mx-auto grid grid-cols-6 mt-5"
+        style="background: url('./assets/images/bg-jackpot.jpg');">
+        <div class="col-span-2"></div>
+        <div class="col-span-4 flex items-center justify-end px-4">
+            <img src="./assets/images/icons/won-sign.png" alt="">
+            <div id="odometer" class="odometer">50269923500.01</div>
+        </div>
+    </div>
+    <!-- Jackpot Odometer -->
+
+    <!-- Transaction Container -->
+    <div class="transaction-box"
+        style="background : url('./assets/images/bg-customer.jpg'); background-position : center">
+        <div class="container mx-auto grid grid-cols-6 gap-4">
+
+            <!-- Left Transaction Box -->
+            <div class="col-span-2 transaction-container">
+                <div class="table-header">
+                    <div class="table-header__details">
+                        <div class="notice-icon"
+                            style="background : url('./assets/images/icons/notice-icon.png'); background-position : center; background-repeat : no-repeat">
+                        </div>
+                        <span class="transaction-title">공지사항</span>
+                        <span class="display-cust">더보기</span>
+                    </div>
+                </div>
+                <!-- Content Lists -->
+                <div class="px-7">
+                    <div class="grid grid-cols-9 font-semibold py-2 border-white/20 border-b">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">라카지노 모든쿠폰 사용규칙안내드립니다</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2022-08-13 00:00</label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-9 font-semibold py-2 border-white/20 border-b">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">라카지노 루징쿠폰 사용규칙안내드립니다</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2022-08-13 00:00</label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-9 font-semibold py-2 border-white/20 border-b">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">라카지노는 전체등급 배팅제한금액없이 이용하실 수 있습니다</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2022-08-13 00:00</label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-9 font-semibold py-2 border-white/20 border-b">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">라카지노 출금규칙 안내드립니다</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2022-08-13 00:00</label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-9 font-semibold py-2 ">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">라카지노 출금규칙 안내드립니다</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2022-08-13 00:00</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Lists -->
+            </div>
+            <!-- Left Transaction Box -->
+
+            <!-- Center Transaction Box -->
+            <div class="col-span-2 transaction-container ">
+                <div class="table-header table-header__group">
+                    <span onclick="ToogleTransactionLists(1)" class="transaction-title active dep"> 실시간 입금 현황</span>
+                    <span onclick="ToogleTransactionLists(2)" class="transaction-title wid">실시간 출금 현황</span>
+                </div>
+                <div class="transaction-list-wrap">
+                    <!-- Deposit Transactions -->
+                    <div class=" transaction-list deposit-lists">
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">sk****p</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">50,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-06 16:15</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">y1****</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">121,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-06 16:15</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">ys****5</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">350,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-20 16:09</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">wj****0</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">500,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-20 16:08</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">re****</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">100,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-20 16:08</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Deposit Transactions -->
+
+                    <!-- Withdrawal Transactions -->
+                    <div class=" transaction-list withdrawal-lists hidden">
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">sh****6a</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">200,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-20 16:04</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">x1****</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">620,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-20 16:04</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">ps****4</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">100,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-20 16:04</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">yo****111</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">240,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-20 16:04</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-8 font-semibold py-2 border-white/20 border-b">
+                            <div class="col-span-2 ">
+                                <label class="title">i5****1</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label class="text-theme-3">1,500,000 원</label>
+                            </div>
+                            <div class="col-span-3 date text-right">
+                                <label>2023-01-20 16:04</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Withdrawal Transactions -->
+
+                </div>
+            </div>
+            <!-- Center Transaction Box -->
+
+            <!-- Right Transaction Box -->
+            <div class="col-span-2 transaction-container">
+                <div class="table-header">
+                    <div class="table-header__details">
+                        <div class="notice-icon"
+                            style="background : url('./assets/images/icons/event-icon.png'); background-position : center; background-repeat : no-repeat">
+                        </div>
+                        <span class="transaction-title">이벤트</span>
+                        <span class="display-cust">더보기</span>
+                    </div>
+                </div>
+
+                <!-- Content Lists -->
+                <div class="px-7">
+                    <div class="grid grid-cols-9 font-semibold py-2 border-white/20 border-b">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">2023년 총상금 33억 파라오계열 토너먼트 - 분기별 토너먼트 [총상금 3억원]</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2023-01-06 16:15</label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-9 font-semibold py-2 border-white/20 border-b">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">2023년 총상금 33억 파라오계열 토너먼트 - 월간토너먼트 [총상금 1억원]</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2023-01-06 16:15</label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-9 font-semibold py-2 border-white/20 border-b">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">2023년 총상금 33억 파라오계열 토너먼트 - 주간토너먼트 [총상금 3천만원]</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2023-01-06 16:10</label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-9 font-semibold py-2 border-white/20 border-b">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">2023년 총상금 33억 파라오계열 토너먼트 안내</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2023-01-06 00:00</label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-9 font-semibold py-2 ">
+                        <div class="col-span-6 ">
+                            <label class="col-span-4 title">라카지노 모든 이벤트, 롤링규정 안내드립니다</label>
+                        </div>
+                        <div class="col-span-3 date text-right">
+                            <label class="col-span-2 ">2022-08-13 00:00</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Lists -->
+            </div>
+
+            <!-- Right Transaction Box -->
+        </div>
+    </div>
+    <!-- Transaction Container -->
+
+    <div class="footer container mx-auto p-5 text-center">
+        <div class="grid grid-cols-8">
+            <div class="col-span-1">
+                <img src="./assets/images/footer/1.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/2.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/3.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/4.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/5.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/6.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/7.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/8.png" alt="">
+            </div>
+        </div>
+        <div class="grid grid-cols-8">
+            <div class="col-span-1">
+                <img src="./assets/images/footer/9.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/10.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/11.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/12.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/13.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/14.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/15.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/16.png" alt="">
+            </div>
+        </div>
+        <div class="grid grid-cols-8">
+            <div class="col-span-1">
+                <img src="./assets/images/footer/17.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/18.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/19.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/20.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/21.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/22.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/23.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/24.png" alt="">
+            </div>
+        </div>
+        <div class="grid grid-cols-8">
+            <div class="col-span-1">
+                <img src="./assets/images/footer/25.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/26.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/27.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/28.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/29.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/30.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/31.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/32.png" alt="">
+            </div>
+        </div>
+        <div class="grid grid-cols-8">
+            <div class="col-span-1">
+                <img src="./assets/images/footer/33.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/34.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/35.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/36.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/37.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/38.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/39.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/40.png" alt="">
+            </div>
+        </div>
+        <div class="grid grid-cols-8">
+            <div class="col-span-1">
+                <img src="./assets/images/footer/41.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/42.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/43.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/44.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/45.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/46.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/47.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/48.png" alt="">
+            </div>
+        </div>
+        <div class="grid grid-cols-9 mb-10">
+            <div class="col-span-1"></div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/49.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/50.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/51.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/52.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/53.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/54.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/55.png" alt="">
+            </div>
+            <div class="col-span-1">
+                <img src="./assets/images/footer/56.png" alt="">
+            </div>
+        </div>
+
+
+        <label class="text-white text-sm">
+            Copyright © 2022
+            <span class="text-theme-3">RA CASINO.</span>
+            All right reserved.
+        </label>
+
+    </div>
+
+    <div class="hidden LOGIN_WRAPPER">
+
+        <div class="login-modal h-screen w-full fixed left-0 top-0 bg-theme-1/50 z-10 flex items-center justify-center">
+            <div class="login-dialog">
+                <div class="login-dialog-header py-1 relative">
+                    <img class="mx-auto" src="./assets/images/brand/logo-vertical.png" height="65">
+                    <img onclick="CloseLoginDialog()" class="cursor-pointer w-8 mx-auto absolute right-5 top-2"
+                        src="./assets/images/icons/close.svg">
+                </div>
+                <div class="login-dialog-content">
+                    <p class="text-center login-title">로그인 후 이용 가능합니다.</p>
+                    <form action="" class="mb-5">
+                        <div class="grid grid-cols-6 mb-2 bg-theme-4 py-2">
+                            <div class="col-span-1 border-r border-theme-2">
+                                <img class="mx-auto" src="./assets/images/icons/user.svg" alt="">
+                            </div>
+                            <div class="col-span-5 px-2">
+                                <input type="text" class="text-sm">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-6 mb-2 bg-theme-4 py-2 mb-5">
+                            <div class="col-span-1 border-r border-theme-2">
+                                <img class="mx-auto" src="./assets/images/icons/lock.svg" alt="">
+                            </div>
+                            <div class="col-span-5 px-2">
+                                <input type="text" class="text-sm">
+                            </div>
+                        </div>
+                        <button style="height: 40px" class=" w-full submit-btn">로그인</button>
+                    </form>
+                    <div class="text-center">
+                        <label class="text-white text-sm">비밀번호를 잊으셨나요?</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="hidden REGISTER_WRAPPER">
+        <div
+            class="register-modal h-screen w-full fixed left-0 top-0 bg-theme-1/50 z-10 flex items-center justify-center">
+            <div class="login-dialog">
+                <div class="login-dialog-header py-1 relative">
+                    <img class="mx-auto" src="./assets/images/brand/logo-vertical.png" height="65">
+                    <img onclick="CloseRegisterDialog()" class="cursor-pointer w-8 mx-auto absolute right-5 top-2"
+                        src="./assets/images/icons/close.svg">
+                </div>
+                <div class="login-dialog-content" style="max-height: 88vh; overflow-y: scroll;">
+                    <form action="" class="mb-5 text-white">
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">아이디 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">아이디는 4-16자리 입니다</div>
+                        </div>
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">비밀번호 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">패스워드는 6-16 자리 입니다</div>
+                        </div>
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">비밀번호 재입력 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50"></div>
+                        </div>
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">이름 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">이름은 한글 2-5 자리 입니다</div>
+                        </div>
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">전화번호 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0" placeholder="'-' 없이 숫자만 입력">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">
+                                <button class="sms">핸드폰인증</button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">은행명 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+
+                                <select class="text-white  w-full input-1 form-control ng-pristine ng-valid ng-touched"
+                                    ng-model="signForm.BankNo">
+                                    <option value="" selected="selected" ng-bind="'Please Select a Bank' | translate"
+                                        class="ng-binding">은행을 선택해주세요
+                                    </option>
+                                    <option value="1">SC제일은행</option>
+                                    <option value="2">경남은행</option>
+                                    <option value="3">광주은행</option>
+                                    <option value="4">국민은행</option>
+                                    <option value="27">신한은행</option>
+                                    <option value="6">기업은행</option>
+                                    <option value="7">농협중앙회</option>
+                                    <option value="8">농협회원조합</option>
+                                    <option value="9">대구은행</option>
+                                    <option value="10">대신증권</option>
+                                    <option value="11">대우증권</option>
+                                    <option value="12">동부증권</option>
+                                    <option value="13">동양종합금융증권</option>
+                                    <option value="14">메리츠증권</option>
+                                    <option value="15">미래에셋증권</option>
+                                    <option value="16">뱅크오브아메리카(BOA)</option>
+                                    <option value="17">부국증권</option>
+                                    <option value="18">부산은행</option>
+                                    <option value="19">산림조합중앙회</option>
+                                    <option value="20">산업은행</option>
+                                    <option value="21">삼성증권</option>
+                                    <option value="22">상호신용금고</option>
+                                    <option value="23">새마을금고</option>
+                                    <option value="24">수출입은행</option>
+                                    <option value="25">수협중앙회</option>
+                                    <option value="26">신영증권</option>
+                                    <option value="5">신한금융투자</option>
+                                    <option value="28">신협중앙회</option>
+                                    <option value="29">에스케이증권</option>
+                                    <option value="30">에이치엠씨투자증권</option>
+                                    <option value="31">엔에이치투자증권</option>
+                                    <option value="32">엘아이지투자증권</option>
+                                    <option value="33">외환은행</option>
+                                    <option value="34">우리은행</option>
+                                    <option value="35">우리투자증권</option>
+                                    <option value="36">우체국</option>
+                                    <option value="37">유진투자증권</option>
+                                    <option value="38">전북은행</option>
+                                    <option value="39">제주은행</option>
+                                    <option value="40">키움증권</option>
+                                    <option value="41">하나대투증권</option>
+                                    <option value="42">하나은행</option>
+                                    <option value="43">하이투자증권</option>
+                                    <option value="44">한국씨티은행</option>
+                                    <option value="45">한국투자증권</option>
+                                    <option value="46">한화증권</option>
+                                    <option value="47">KB(구현대)증권</option>
+                                    <option value="49">홍콩상하이은행</option>
+                                    <option value="53">카카오뱅크</option>
+                                    <option value="54">케이뱅크</option>
+                                    <option value="56">토스뱅크</option>
+                                    <option value="57">토스증권</option>
+                                </select>
+
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">
+
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">계좌번호 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0" placeholder="계좌번호">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">
+
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">추천인</div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">
+                                ID가 없으시면 비워두셔도 됩니다.
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                    <div class="signup-info">
+                        <ul>
+                            <li>타명의 가입시 사유 불문 승인 거부되실 수 있습니다.</li>
+                            <li>본인이 등록한 계좌로만 입금이 가능합니다.</li>
+                            <li>가입신청하신후 승인 전화를 꼭 받아주세요.</li>
+                            <li>무단으로 중복가입 시 사전 통보없이 등급 강등, 차단 되실 수 있습니다.</li>
+                            <li>미성년자는 승인시 가입이 거부됩니다.</li>
+                            <li>가입자명과 예금주 반드시 일치해야합니다.</li>
+                            <li>보안을 위해 입금계좌는 자주 변경됩니다. 항상 입금계좌 확인 후 입금 부탁드립니다.</li>
+                            <li>1:1 전용계좌 서비스도 이용이 가능하니 고객센터에 문의해주세요 *</li>
+                        </ul>
+                    </div>
+
+                    <button style="height: 40px" class=" w-full submit-btn">회원가입</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="./assets/js/script.js"></script>
+
+</html>
