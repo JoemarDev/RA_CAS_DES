@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 
+.UserIsMember {
+    display: none;
+}
+
+.UserIsGuess {
+    display: block;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
 body {
     min-width: 1260px;
     overflow-x: hidden;
@@ -23,19 +38,38 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
 body::-webkit-scrollbar {
+    display: block !important;
     width: 10px;
     background-color: #181818;
 }
 
 body::-webkit-scrollbar-thumb {
+    display: block !important;
+    background: #dac179;
+}
+
+
+.custom-scroll::-webkit-scrollbar {
+    display: block !important;
+    width: 10px;
+    background-color: #181818;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    display: block !important;
     background: #dac179;
 }
 
 
 select::-webkit-scrollbar {
-    width: 10px;
-    background-color: #181818;
+    display: block !important;
+    width: 10px !important;
+    background-color: #181818 !important;
 }
 
 .login-dialog-content::-webkit-scrollbar {
@@ -84,6 +118,25 @@ select:focus {
     transition: all .5s;
     outline: none;
     box-shadow: none;
+    color: #ffffff;
+}
+
+.button-2 {
+    width: 100%;
+    height: 45px;
+    border-radius: 0;
+    background: #e1ca84;
+    background: -moz-linear-gradient(top, #e1ca84 0%, #ad8835 100%);
+    background: -webkit-linear-gradient(top, #e1ca84 0%, #ad8835 100%);
+    background: linear-gradient(to bottom, #e1ca84 0%, #ad8835 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e1ca84', endColorstr='#ad8835', GradientType=0);
+    border: 1px solid #e1ca84;
+    color: #000000;
+}
+
+.button-2:hover {
+    background: #100b01;
+    border-color: #443209;
     color: #ffffff;
 }
 
@@ -616,4 +669,99 @@ label.title:hover {
 .signup-info ul>li:last-child {
     list-style: none;
     margin: 20px 0 0;
+}
+
+
+
+
+/* MEMBER STYLES */
+
+.transfer-money {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    width: 200px;
+    border: 1px solid #585858;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.options {
+    border-right: 1px solid #585858;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .maintinance {
+    font-size: 10px;
+    margin-top: 1px;
+}
+
+.content .content-balance {
+    margin-top: 1px;
+}
+
+
+.dialog-table {
+    width: 100%;
+    color: #fff;
+}
+
+.dialog-table .content {
+    width: 70%;
+}
+
+.dialog-table thead th {
+    background: #3e3e3e;
+    padding: 10px;
+    color: #fff;
+}
+
+.dialog-table td {
+    padding: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.content_dialog_page {
+    text-align: center;
+    color: #fff;
+}
+
+.content_dialog_page ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.content_dialog_page li {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 12px;
+    border: 1px solid #333
+}
+
+.content_dialog_page li.active {
+    background: #ad8734;
+    border: 1px solid #ad8734
+}
+
+.tab-active {
+    border-bottom: 2px solid #ad8734
+}
+
+.dialog-tabs {
+    cursor: pointer;
+
+}
+
+.dialog-tabs:hover {
+    color: #ad8734;
 }
